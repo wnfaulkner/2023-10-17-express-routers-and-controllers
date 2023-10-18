@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var methodOverride = require('method-override')
 
 var indexRouter = require('./routes/index');
 var todosRouter = require('./routes/todos');
@@ -20,6 +21,8 @@ app.use(express.json()); // processes data sent in the body of the request, if i
 app.use(express.urlencoded({ extended: false })); //processes 'form' data sent in the body of the request. It will create a property on req.body for each input, select, or text response to the form.
 app.use(cookieParser()); //add a cookie property for each cookie sent in the request 
 app.use(express.static(path.join(__dirname, 'public'))); //If the request is static asset, returns the file
+
+app.use(express.methodOverride('_method'))
 
 app.use(function(req, res, next) {
   //console.log('Hello SEI!');

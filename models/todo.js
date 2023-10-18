@@ -16,10 +16,10 @@ const todos = [
 
   function getOne(id) {
     // URL params are strings - convert to a number
-    id = parseInt(id);
+    id = parseInt(id)
     // The Array.prototype.find iterator method is
     // ideal for finding objects within an array
-    return todos.find((todo) => todo.id === id);
+    return todos.find((todo) => todo.id === id)
   }
 
   function appendNewTodo(todo){

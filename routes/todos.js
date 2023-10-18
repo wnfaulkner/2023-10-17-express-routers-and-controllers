@@ -19,3 +19,6 @@ router.get('/:id', todosCtrl.show)
 
 // POST /todos
 router.post('/', todosCtrl.createTodo)
+
+// DELETE /todos
+
