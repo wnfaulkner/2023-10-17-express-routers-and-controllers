@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+module.exports = router;
+
 // Require the controller that exports To-Do CRUD functions
 var todosCtrl = require('../controllers/todos');
 
@@ -9,7 +11,11 @@ var todosCtrl = require('../controllers/todos');
 // GET /todos
 router.get('/', todosCtrl.index);
 
-// GET /todos/:id
-router.get('/:id', todosCtrl.show);
+// GET /todos/new
+router.get('/new', todosCtrl.newTodo)
 
-module.exports = router;
+// GET /todos/:id
+router.get('/:id', todosCtrl.show)
+
+// POST /todos
+router.post('/', todosCtrl.createTodo)

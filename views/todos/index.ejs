@@ -1,6 +1,6 @@
 <%- include('../partials/header/') %>
 
-    <h1>Todos</h1>
+    <h3>To-Dos as of <%= time %></h3>
     <ul>
       <% todos.forEach(function(t) { %>
         <li>
@@ -10,5 +10,5 @@
         </li>
       <% }); %>
     </ul>
-    
+    <a href="/todos/new" >Add New To-Do</a>
 <%- include('../partials/footer/') %>
