@@ -7,7 +7,8 @@ const todos = [
   module.exports = {
     getAll,
     getOne,
-    appendNewTodo
+    appendNewTodo,
+    removeTodo
   };
 	
   function getAll() {
@@ -22,8 +23,16 @@ const todos = [
     return todos.find((todo) => todo.id === id)
   }
 
-  function appendNewTodo(todo){
+  function appendNewTodo(todo) {
     todo.id = Date.now() % 1000000
     todo.done = false
     todos.push(todo)
+  }
+
+  function removeTodo(id) {
+    // All properties attached to req.params are strings!
+    id = parseInt(id);
+    // Find the index based on the id of the todo object
+    const idx = todos.findIndex(todo => todo.id === id);
+    todos.splice(idx, 1);
   }

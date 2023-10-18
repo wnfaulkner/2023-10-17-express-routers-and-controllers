@@ -1,7 +1,7 @@
 // controllers/todos.js
 
 module.exports = {
-  index, show, newTodo, createTodo
+  index, show, newTodo, createTodo, deleteTodo
 };
 
 // Convention is to name the model in uppercase and singular
@@ -31,4 +31,9 @@ function show(req, res) {
     todo: Todo.getOne(req.params.id),
     title: 'Details:'
   });
+}
+
+function deleteTodo(req, res) {
+  Todo.removeTodo(req.params.id)
+  res.redirect('/todos')
 }

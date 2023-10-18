@@ -21,4 +21,4 @@ router.get('/:id', todosCtrl.show)
 router.post('/', todosCtrl.createTodo)
 
 // DELETE /todos
-
+router.delete('/:id', todosCtrl.deleteTodo)
