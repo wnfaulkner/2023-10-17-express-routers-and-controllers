@@ -22,8 +22,7 @@ app.use(express.urlencoded({ extended: false })); //processes 'form' data sent i
 app.use(cookieParser()); //add a cookie property for each cookie sent in the request 
 app.use(express.static(path.join(__dirname, 'public'))); //If the request is static asset, returns the file
 
-app.use(express.methodOverride('_method'))
-
+app.use(methodOverride('_method'))
 app.use(function(req, res, next) {
   //console.log('Hello SEI!');
   res.locals.time = new Date().toLocaleTimeString(); // Add a time property to the res.locals object. The time property will then be accessible when rendering a view
