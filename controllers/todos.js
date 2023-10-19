@@ -40,6 +40,7 @@ function updateTodo(req, res) {
   // console.log(req.body) 
   req.body.done = !!req.body.done //=== undefined ? false : true
   Todo.updateTodo(req.params.id, req.body) // The model is responsible for creating data
+  //console.log(req.body, req.param.id)
   res.redirect(`/todos/${req.params.id}`) // Do a redirect anytime data is changed
 }
 

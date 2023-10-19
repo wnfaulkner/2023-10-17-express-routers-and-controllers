@@ -42,13 +42,5 @@ const todos = [
     id = parseInt(id)
     const todo = getOne(id)
     todo.todo = updatedTodo.todo
-    // const todoAfterUpdate = {
-    //   id: id, 
-    //   todo: updatedTodo, 
-    //   done: todoBeforeUpdate.done
-    // }
-    // const idx = todos.findIndex(todo => todo.id === id)
-
-    // todos.splice(idx, 1)
-    // todos.splice(idx, 0, todoAfterUpdate)
+    todo.done = updatedTodo.done
   }
