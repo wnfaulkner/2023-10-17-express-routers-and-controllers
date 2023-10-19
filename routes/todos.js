@@ -17,6 +17,12 @@ router.get('/new', todosCtrl.newTodo)
 // GET /todos/:id
 router.get('/:id', todosCtrl.show)
 
+// GET /todos/:id/edit
+router.get('/:id/edit', todosCtrl.editTodo)
+
+// PUT /todos/:id/
+router.put('/:id', todosCtrl.updateTodo)
+
 // POST /todos
 router.post('/', todosCtrl.createTodo)
 

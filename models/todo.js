@@ -8,7 +8,8 @@ const todos = [
     getAll,
     getOne,
     appendNewTodo,
-    removeTodo
+    removeTodo,
+    updateTodo
   };
 	
   function getAll() {
@@ -35,4 +36,19 @@ const todos = [
     // Find the index based on the id of the todo object
     const idx = todos.findIndex(todo => todo.id === id);
     todos.splice(idx, 1);
+  }
+
+  function updateTodo(id, updatedTodo){
+    id = parseInt(id)
+    const todo = getOne(id)
+    todo.todo = updatedTodo.todo
+    // const todoAfterUpdate = {
+    //   id: id, 
+    //   todo: updatedTodo, 
+    //   done: todoBeforeUpdate.done
+    // }
+    // const idx = todos.findIndex(todo => todo.id === id)
+
+    // todos.splice(idx, 1)
+    // todos.splice(idx, 0, todoAfterUpdate)
   }
